@@ -1,2 +1,2 @@
-"""CoT Trans - Chain of Thought Translation Pipeline"""
+"""CoT Mirage - Chain of Thought Hacking Pipeline"""
 __version__ = "1.0.0"

@@ -11,7 +11,7 @@ class ResultsCSVWriter:
     def __init__(self, filename: Optional[str] = None):
         if filename is None:
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            filename = f"cot_trans_results_{timestamp}.csv"
+            filename = f"cot_mirage_results_{timestamp}.csv"
 
         self.filename = Path(filename)
         self.filename.parent.mkdir(parents=True, exist_ok=True)

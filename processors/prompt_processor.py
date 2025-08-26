@@ -19,7 +19,7 @@ class ProcessingResult:
 
 
 class PromptProcessor:
-    """Main processor for CoT transformation pipeline"""
+    """Main processor for prompt & CoT transformation pipeline"""
 
     def __init__(self,
                  llm_model,

@@ -1,4 +1,4 @@
-"""Main entry point for CoT Trans pipeline"""
+"""Main entry point for CoT Mirage Hacking pipeline"""
 import argparse
 import logging
 from datetime import datetime
@@ -56,7 +56,7 @@ def multiline_input() -> str:
 
 def run_interactive_mode(processor: PromptProcessor, csv_writer: ResultsCSVWriter):
     """Run the processor in interactive mode"""
-    print("CoT Trans Interactive Mode with Judge Evaluation")
+    print("CoT Mirage Interactive Mode with Judge Evaluation")
     print("=" * 50)
     print("Type 'exit' or 'quit' to end the session")
 
