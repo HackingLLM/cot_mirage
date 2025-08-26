@@ -16,6 +16,66 @@
 - Claude API key
 - OpenAI API key
 
+
+## 🔬 Experiment Reproduction
+
+### How to Reproduce Our Results
+
+Follow these steps to reproduce the experimental results from our paper:
+
+1. **Setup the Repository**
+   
+   Follow the installation instructions in the [Installation](#-installation) section below to set up the environment.
+
+2. **Configure Experiment Settings**
+   
+   Edit the `.env` file with your API keys and our experimental parameters:
+   ```bash
+   # API Keys
+   CLAUDE_API_KEY=your_claude_api_key_here
+   OPENAI_API_KEY=your_openai_api_key_here
+   
+   # Experimental Configuration (Our Paper Settings)
+   LLM_RETRY_COUNT=3
+   API_RETRY_COUNT=3
+   API_INTERVAL=2.0
+   MAX_JUDGER_RETRIES=10  # We use 10 retries for our experiment
+   ```
+   
+   **Important**: For our experiments, we set `MAX_JUDGER_RETRIES=10` while keeping other parameters at default values.
+
+3. **Run the Experiment**
+   
+   Execute the main experiment using our harmful prompts dataset:
+   ```bash
+   python main.py --input-csv ./examples/jo_harmful_prompts.csv --output-csv results.csv
+   ```
+
+4. **Expected Results**
+   
+   The experiment will:
+   - Process all prompts from the Jo harmful prompts dataset
+   - Apply CoT mirage hacking with up to 10 judge retry attempts
+   - Generate detailed results in `results.csv`
+   - Display summary statistics upon completion
+
+5. **Verify Results**
+   
+   Check the output CSV file for:
+   - Individual prompt scores
+   - Refusal rates
+   - Success/failure statistics
+   
+   The summary statistics should align with the findings reported in our paper.
+
+### Alternative Datasets
+
+To test with other datasets, simply replace the input CSV:
+```bash
+# Test with custom harmful prompts
+python main.py --input-csv ./examples/custom_prompts.csv --output-csv custom_results.csv
+```
+
 ## 📦 Installation
 
 1. **Clone the repository**
@@ -91,16 +151,16 @@ prompt
 
 ### Command Line Arguments
 
-| Argument | Description | Default |
-|----------|-------------|---------|
-| `--device` | Device for local LLM (cuda, cpu, or mps) | cuda |
-| `--interactive` | Run in interactive mode | False |
-| `--input-csv` | Input CSV file with prompts | None |
-| `--output-csv` | Output CSV file for results | results_YYYYMMDD_HHMMSS.csv |
+| Argument | Description                                 | Default |
+|----------|---------------------------------------------|---------|
+| `--device` | Device for local LLM (cuda, cpu, or mps)    | cuda |
+| `--interactive` | Run in interactive mode                     | False |
+| `--input-csv` | Input CSV file with prompts                 | None |
+| `--output-csv` | Output CSV file for results                 | results_YYYYMMDD_HHMMSS.csv |
 | `--log-level` | Logging level (DEBUG, INFO, WARNING, ERROR) | INFO |
-| `--log-file` | Log file path | None |
-| `--llm-retry-count` | Override LLM retry count | From config |
-| `--api-retry-count` | Override API retry count | From config |
+| `--log-file` | Log file path                               | None |
+| `--llm-retry-count` | Override LLM_RETRY_COUNT env var            | From config |
+| `--api-retry-count` | Override API_RETRY_COUNT env var            | From config |
 
 ### Examples
 
