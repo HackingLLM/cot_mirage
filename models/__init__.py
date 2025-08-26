@@ -1,5 +1,5 @@
 """Model interfaces and wrappers"""
 from .llm import LLMWrapper
-from .judge import JudgeInterface
+from .judge import StrongRejectJudge
 
-__all__ = ['LLMWrapper', 'JudgeInterface']
+__all__ = ['LLMWrapper', 'StrongRejectJudge']
