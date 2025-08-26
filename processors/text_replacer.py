@@ -1,6 +1,6 @@
 """Text replacement utilities"""
-import re
 import logging
+import re
 from typing import Dict, Optional
 
 

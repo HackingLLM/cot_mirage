@@ -1,9 +1,10 @@
 """Claude API client with retry logic"""
-import time
 import json
-import requests
 import logging
+import time
 from typing import Optional, Dict
+
+import requests
 
 
 class ClaudeAPIClient:

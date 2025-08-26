@@ -1,11 +1,8 @@
-import os
-import re
-
-import google.generativeai as genai
-import openai
 import logging
-
+import re
 from typing import Optional
+
+import openai
 
 
 class StrongRejectJudge:

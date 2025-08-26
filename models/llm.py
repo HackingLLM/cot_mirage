@@ -1,6 +1,8 @@
 """Local LLM wrapper for consistent interface"""
-import torch
 import logging
+
+import torch
+
 
 class LLMWrapper:
     """Wrapper for local LLM model with consistent interface"""

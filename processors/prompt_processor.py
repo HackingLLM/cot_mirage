@@ -1,6 +1,5 @@
 """Main prompt processing pipeline"""
 import logging
-import torch
 from dataclasses import dataclass
 from typing import Optional, Dict, Any
 
