@@ -1,0 +1,8 @@
+torch~=2.8.0
+transformers~=4.55.2
+requests~=2.32.4
+nltk~=3.9.1
+matplotlib~=3.10.0
+google-generativeai==0.8.5
+openai==1.101.0
+python-dotenv==1.1.1
