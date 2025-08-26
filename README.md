@@ -171,4 +171,4 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 
 ---
 
-**Note:** This project is for research and educational purposes. Please ensure compliance with all applicable laws and ethical guidelines when using this pipeline. is for research and educational purposes. Please ensure compliance with all applicable laws and ethical guidelines when using this pipeline.
+**Note:** This project is for research and educational purposes. Please ensure compliance with all applicable laws and ethical guidelines when using this pipeline.
