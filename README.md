@@ -1,37 +1,18 @@
 # CoT Mirage Hacking
 
-## 📋 Table of Contents
-
-- [Features](#features)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Usage](#usage)
-  - [Interactive Mode](#interactive-mode)
-  - [Batch Mode](#batch-mode)
-  - [Command Line Arguments](#command-line-arguments)
-- [Project Structure](#project-structure)
-- [Output Format](#output-format)
-- [API Documentation](#api-documentation)
-- [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## ✨ Features
 
 - **Dual Processing Modes**: Interactive mode for real-time prompt testing and batch mode for processing multiple prompts
 - **Strong Reject Judge**: Built-in evaluation system to score and analyze prompts
-- **Claude API Integration**: Seamless integration with Claude API for enhanced processing
 - **Comprehensive Logging**: Configurable logging levels with file output support
-- **CSV Input/Output**: Process prompts from CSV files and save results with detailed statistics
+- **Standardized Input/Output**: Process prompts from CSV files and save results with detailed statistics
 - **Retry Mechanisms**: Configurable retry counts for both LLM and API operations
-- **Multi-device Support**: Compatible with CUDA, CPU, and MPS devices
 - **Detailed Statistics**: Automatic generation of summary statistics for batch processing
 
 ## 🔧 Prerequisites
 
 - Python 3.12
-- CUDA-capable GPU (optional, for accelerated processing)
+- CUDA-capable GPU
 - Claude API key
 - OpenAI API key
 
