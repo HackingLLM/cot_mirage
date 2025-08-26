@@ -14,7 +14,7 @@ from utils.logging_config import setup_logging
 from utils.prompt_templates import PromptTemplates
 from models.judge import StrongRejectJudge
 
-
+# read text file line by line
 def load_prompts_from_csv(csv_file: str) -> list:
     """Load prompts from CSV file"""
     prompts = []

@@ -78,27 +78,14 @@ Tips:
 
     def evaluate(self, goal: str, response: str, use_google: bool = False) -> Optional[float]:
         input_text = self._build_classifier_input(goal, response)
-        if use_google:
-            GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-            genai.configure(api_key=GOOGLE_API_KEY)
-            model = genai.GenerativeModel('gemini-2.5-flash')
-            response_obj = model.generate_content(input_text)
-            model_output = response_obj.text
-            if response_obj.prompt_feedback and response_obj.prompt_feedback.block_reason:
-                logging.info(f"Request blocked: {response_obj.prompt_feedback.block_reason}")
-                return None
-            if not response_obj.candidates:
-                logging.info("No response generated")
-                return None
-        else:
-            with openai.OpenAI() as client:
-                response_obj = client.chat.completions.create(
-                    model="gpt-4o-mini",
-                    messages=[{"role": "user", "content": input_text}],
-                    temperature=0.0,
-                    max_tokens=1000
-                )
-                model_output = response_obj.choices[0].message.content
+        with openai.OpenAI() as client:
+            response_obj = client.chat.completions.create(
+                model="gpt-4o-mini",
+                messages=[{"role": "user", "content": input_text}],
+                temperature=0.0,
+                max_tokens=1000
+            )
+            model_output = response_obj.choices[0].message.content
 
         try:
             logging.info("\n========== [GeminiStrongRejectJudge Evaluation] ==========")
