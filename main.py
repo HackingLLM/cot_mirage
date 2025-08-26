@@ -22,8 +22,8 @@ def load_prompts_from_csv(csv_file: str) -> list:
         with open(csv_file, 'r', encoding='utf-8') as f:
             reader = csv.DictReader(f)
             for row in reader:
-                if 'Behavior' in row and row['Behavior'].strip():
-                    prompts.append(row['Behavior'].strip())
+                if 'prompt' in row and row['prompt'].strip():
+                    prompts.append(row['prompt'].strip())
         logging.info(f"Loaded {len(prompts)} prompts from {csv_file}")
     except FileNotFoundError:
         logging.error(f"CSV file not found: {csv_file}")
